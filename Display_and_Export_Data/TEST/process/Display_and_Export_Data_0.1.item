@@ -3,7 +3,7 @@
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="input_file" prompt="input_file?" promptNeeded="false" type="id_String" value="&quot;N/A&quot;"/>
     <contextParameter comment="" name="filter_range_amount_min" prompt="filter_range_amount_min?" promptNeeded="false" type="id_Integer" value="10"/>
-    <contextParameter comment="" name="filter_range_amount_max" prompt="filter_range_amount_max?" promptNeeded="false" type="id_Integer" value="100"/>
+    <contextParameter comment="" name="filter_range_amount_max" prompt="filter_range_amount_max?" promptNeeded="false" type="id_Integer" value="1000"/>
     <contextParameter comment="" name="filter_timestamp_min" prompt="filter_timestamp_min?" promptNeeded="false" type="id_String" value="&quot;2019-01-01&quot;"/>
     <contextParameter comment="" name="filter_timestamp_max" prompt="filter_timestamp_max?" promptNeeded="false" type="id_String" value="&quot;2019-12-31&quot;"/>
     <contextParameter comment="" name="filter_percentile" prompt="filter_percentile?" promptNeeded="false" type="id_Integer" value="0"/>
@@ -51,7 +51,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:lLKm7IgIENnP3r4c/v3R14W9gnUElU3vTLv2QUrA" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:sL3pu5B0Y3CBLZ8qSBG+exN6eiF3rSnoeeUtSslP" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -86,7 +86,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+LCFshA3EEwTdByJCPcn/NGBzLzkmUhPan3dGvtK" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:iFEtY0C2+hYO4J/dyr/7NpKNSPXWGuDzgukKogjS" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -4442,12 +4442,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row11" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="aggr" lineStyle="0" metaname="aggr" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_6" target="tLogRow_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="aggr" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="aggr_all" lineStyle="0" metaname="aggr_all" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_6" target="tFileOutputDelimited_5">
+  <connection connectorName="FLOW" label="aggr_all" lineStyle="0" metaname="aggr_all" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_6" target="tFileOutputDelimited_5">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="sum_amount"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -4470,6 +4465,11 @@
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="aggr_all" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="aggr" lineStyle="0" metaname="aggr" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_6" target="tLogRow_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="aggr" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tFileInputDelimited_7" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_7" target="tFilterRow_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
